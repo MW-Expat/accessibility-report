@@ -38,9 +38,21 @@ jobs:
           npx pa11y-ci --config .pa11yci.js
         continue-on-error: true
 
-      # ───────── Publish to GitHub Pages ─────────
-      - name: Deploy reports to gh-pages
-        uses: peaceiris/actions-gh-pages@v4   # simplest Pages deploy :contentReference[oaicite:5]{index=5}
+  # ───────── Publish to GitHub Pages ─────────
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: './public'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
