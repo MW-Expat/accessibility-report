@@ -8,7 +8,7 @@ const urls = fs.readFileSync(urlsFilePath, 'utf8')
     .map(url => url.trim())
     .filter(url => url.length > 0);
 
-const REPORT_DATE = Date.now();
+const REPORT_DATE = process.env.REPORT_DATE;
 
 module.exports = {
     urls: [
