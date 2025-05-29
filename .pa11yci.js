@@ -16,6 +16,7 @@ module.exports = {
     ],
     defaults: {
         reporters: [
+            "cli",
             ["pa11y-ci-reporter-html", {destination: `./public/pa11y/${REPORT_DATE}/index.html`} ]
         ],
         standard: 'WCAG2AA',
