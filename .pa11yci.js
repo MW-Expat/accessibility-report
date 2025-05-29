@@ -14,11 +14,10 @@ module.exports = {
     urls: [
         'https://mw-expat.com'
     ],
-    reporters: [
-        { name: "json", filename: `./public/pa11y/${REPORT_DATE}/pa11y.json` },
-        { name: "pa11y-ci-reporter-html", filename: `./public/pa11y/${REPORT_DATE}/index.html` }
-    ],
     defaults: {
+        reporters: [
+            ["pa11y-ci-reporter-html", {destination: `./public/pa11y/${REPORT_DATE}/index.html`} ]
+        ],
         standard: 'WCAG2AA',
         timeout: 60000,
         chromeLaunchConfig: {
