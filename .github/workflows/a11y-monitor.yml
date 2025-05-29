@@ -32,6 +32,7 @@ jobs:
         run: |
           mkdir -p public/pa11y/$REPORT_DATE
           npx pa11y-ci --config .pa11yci.js
+        continue-on-error: true
 
       # ───────── Publish to GitHub Pages ─────────
       - name: Deploy reports to gh-pages

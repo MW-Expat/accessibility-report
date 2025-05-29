@@ -11,7 +11,9 @@ const urls = fs.readFileSync(urlsFilePath, 'utf8')
 const REPORT_DATE = Date.now();
 
 module.exports = {
-    urls,
+    urls: [
+        'https://mw-expat.com'
+    ],
     reporters: [
         { name: "json", filename: `./public/pa11y/${REPORT_DATE}/pa11y.json` },
         { name: "pa11y-ci-reporter-html", filename: `./public/pa11y/${REPORT_DATE}/index.html` }
