@@ -17,6 +17,7 @@ module.exports = {
         { name: "pa11y-ci-reporter-html", filename: `./public/pa11y/${REPORT_DATE}/index.html` }
     ],
     defaults: {
+        standard: 'WCAG2AA',
         timeout: 60000,
         chromeLaunchConfig: {
             executablePath: process.env.GITHUB_ACTIONS === 'true'
@@ -26,5 +27,6 @@ module.exports = {
                 "--no-sandbox"
             ]
         },
+        runners: ["axe"]
     },
 };
