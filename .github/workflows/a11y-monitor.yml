@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 14
 
-      - run: npm ci
+      - run: npm i
 
       # ───────── Lighthouse CI (exec-summary for execs) ─────────
       - name: Lighthouse CI
