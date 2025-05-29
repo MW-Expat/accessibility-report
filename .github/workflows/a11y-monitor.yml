@@ -13,20 +13,19 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 14
 
       - run: npm ci
-
-      - name: Install Lighthouse CI CLI
-        run: npm install -g @lhci/cli
 
       # ───────── Lighthouse CI (exec-summary for execs) ─────────
       - name: Lighthouse CI
         run: |
-          lhci autorun \
+          npx lhci autorun \
+            --max-wait-for-load=60000 \
             --upload.target=filesystem \
             --upload.outputDir=public/lhci/$REPORT_DATE \
-            --collect.url=$(tr '\n' ' ' < urls.txt)
+            --collect.url=$(tr '\n' ' ' < urls.txt) \
+            --chrome-flags="--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --disable-gpu --disable-extensions --disable-background-timer-throttling --disable-renderer-backgrounding"
 
       # ───────── Pa11y-CI (full WCAG backlog) ─────────
       - name: Pa11y CI
