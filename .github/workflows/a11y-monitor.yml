@@ -1,0 +1,39 @@
+name: Weekly accessibility audit
+on:
+  schedule:
+    - cron:  '0 6 * * 1'   # 06:00 every Monday UTC :contentReference[oaicite:4]{index=4}
+  workflow_dispatch:       # manual run button
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    env:
+      REPORT_DATE: ${{ github.run_started_at }}    # 2025-05-29T07:00:00Z
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - run: npm ci
+
+      # ───────── Lighthouse CI (exec-summary for execs) ─────────
+      - name: Lighthouse CI
+        run: |
+          lhci autorun \
+            --upload.target=filesystem \
+            --upload.outputDir=public/lhci/$REPORT_DATE \
+            --collect.url=$(tr '\n' ' ' < urls.txt)
+
+      # ───────── Pa11y-CI (full WCAG backlog) ─────────
+      - name: Pa11y CI
+        run: |
+          mkdir -p public/pa11y/$REPORT_DATE
+          npx pa11y-ci --config pa11yci.json
+
+      # ───────── Publish to GitHub Pages ─────────
+      - name: Deploy reports to gh-pages
+        uses: peaceiris/actions-gh-pages@v4   # simplest Pages deploy :contentReference[oaicite:5]{index=5}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

@@ -1,0 +1,14 @@
+{
+  "name": "accessibility-report",
+  "private": true,
+  "scripts": {
+    "lhci": "lhci autorun",
+    "pa11y": "pa11y-ci --config pa11yci.json",
+    "audit": "npm run lhci && npm run pa11y"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.14.0",
+    "pa11y-ci": "^3.1.0",
+    "pa11y-ci-reporter-html": "^7.0.0"
+  }
+}
