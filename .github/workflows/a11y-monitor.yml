@@ -5,11 +5,6 @@ on:
     - cron:  '0 6 * * 1'   # 06:00 every Monday UTC :contentReference[oaicite:4]{index=4}
   workflow_dispatch:       # manual run button
 
-permissions:             # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -44,6 +39,10 @@ jobs:
 
   # ───────── Publish to GitHub Pages ─────────
   deploy:
+    permissions: # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+      contents: write
+      pages: write
+      id-token: write
     needs: audit
     runs-on: ubuntu-latest
     steps:
