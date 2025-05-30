@@ -13,11 +13,11 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     env:
-      REPORT_DATE: ${{ github.run_started_at }}
+      RAW_DATE: ${{ github.run_started_at }}
     steps:
       - name: Sanitize REPORT_DATE
         shell: bash
-        run: echo "REPORT_DATE=$(echo '${{ github.run_started_at }}' | cut -d'T' -f1)" >> $GITHUB_ENV
+        run: echo "REPORT_DATE=$(date -d "$RAW_DATE" '+%d-%m-%Y')" >> $GITHUB_ENV
 
       - uses: actions/checkout@v4
 
