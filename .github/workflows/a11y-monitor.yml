@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Sanitize REPORT_DATE
         shell: bash
-        run: echo "REPORT_DATE=$(date -d "$RAW_DATE" '+%d-%m-%Y')" >> $GITHUB_ENV
+        run: echo "REPORT_DATE=$(date -d "$RAW_DATE" '+%Y-%m-%d')" >> $GITHUB_ENV
 
       - uses: actions/checkout@v4
 
@@ -47,6 +47,18 @@ jobs:
           mkdir -p ./public/pa11y/$REPORT_DATE
           npx pa11y-ci --config .pa11yci.js
         continue-on-error: true
+
+          # ───────── Build umbrella index.html (latest only) ─────────
+      - name: ▸ Build umbrella index
+        shell: bash
+        run: |
+         parent="public/pa11y"
+         mkdir -p "$parent"
+         latest=$(ls -1d "$parent"/*/ | sort -r | head -n1 | xargs -n1 basename)
+         
+         cat > "$parent/index.html" <<HTML
+          <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Latest Accessibility Report</title><style>body{font-family:system-ui;margin:0}header{padding:1rem 2rem;background:#f6f8fa;border-bottom:1px solid #d0d7de}h1{font-size:1.4rem;margin:0}iframe{width:100%;height:90vh;border:0}</style></head><body><header><h1>Latest Accessibility Report – $latest</h1></header><iframe src="$latest/index.html" title="Accessibility report"></iframe></body></html>
+          HTML
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
