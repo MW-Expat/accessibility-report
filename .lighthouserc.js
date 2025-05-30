@@ -10,7 +10,7 @@ module.exports = {
             url: urls[0],
             numberOfRuns: 1,
             chromePath: process.env.GITHUB_ACTIONS === 'true'
-                ? '/usr/bin/google-chrome'
+                ? '/usr/bin/google-chrome-unstable'
                 : '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary',
         },
         upload: {
