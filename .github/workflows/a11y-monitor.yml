@@ -13,8 +13,12 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     env:
-      REPORT_DATE: ${{ github.run_number }}
+      REPORT_DATE: ${{ github.run_started_at }}
     steps:
+      - name: Sanitize REPORT_DATE
+        shell: bash
+        run: echo "REPORT_DATE=$(echo '${{ github.run_started_at }}' | cut -d'T' -f1)" >> $GITHUB_ENV
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
