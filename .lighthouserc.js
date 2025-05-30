@@ -9,9 +9,9 @@ module.exports = {
         collect: {
             url: urls[0],
             numberOfRuns: 1,
-            chromePath: process.env.GITHUB_ACTIONS === 'true'
+            chromePath: process.env.$CHROME_PATH || (process.env.GITHUB_ACTIONS === 'true'
                 ? '/usr/bin/google-chrome-unstable'
-                : '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary',
+                : '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'),
         },
         upload: {
             target: 'filesystem', // write HTML locally

@@ -25,8 +25,17 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Chrome Canary (unstable)
-        run: npx @puppeteer/browsers@latest install chrome@canary
+      - name: ▸ Install Chrome Canary (puppeteer/browsers)
+        run: |
+          # Install latest Chrome Canary (~120 MB) into the runner cache
+          npx --yes @puppeteer/browsers@latest install chrome@canary
+          # Compute the executable path and expose it as CHROME_PATH for later steps
+          echo "CHROME_PATH=$(node - <<'NODE'
+          const { computeExecutablePath } = require('@puppeteer/browsers');
+          console.log(computeExecutablePath({browser: 'chrome', channel: 'canary' }));
+          NODE
+          )" >> "$GITHUB_ENV"
+          echo "Chrome Canary path set to $CHROME_PATH"
 
       - run: npm ci
 
@@ -35,7 +44,7 @@ jobs:
         env:
           REPORT_DATE: ${{ env.REPORT_DATE }}
         run: |
-          npx lhci autorun --chrome-flags="--headless --disable-dev-shm-usage"
+          npx lhci autorun --chrome-flags="--headless --disable-dev-shm-usage" --collect.settings.chromePath="$CHROME_PATH"
         continue-on-error: true
 
       # ───────── Pa11y-CI (full WCAG backlog) ─────────
