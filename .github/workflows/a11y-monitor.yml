@@ -28,7 +28,7 @@ jobs:
       - name: ▸ Install Chrome Canary (puppeteer/browsers)
         run: |
           # Install latest Chrome Canary (~120 MB) into the runner cache
-          npx --yes @puppeteer/browsers@latest install chrome@canary
+          npx --yes @puppeteer/browsers install chrome@canary
           # Compute the executable path and expose it as CHROME_PATH for later steps
           echo "CHROME_PATH=$(node - <<'NODE'
           const { computeExecutablePath } = require('@puppeteer/browsers');
