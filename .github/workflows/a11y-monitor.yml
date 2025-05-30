@@ -8,27 +8,25 @@ on:
 jobs:
   audit:
     permissions: # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-      contents: write
+      contents: read
       pages: write
       id-token: write
     runs-on: ubuntu-latest
     env:
-      REPORT_DATE: ${{ github.run_started_at }}    # 2025-05-29T07:00:00Z
+      REPORT_DATE: ${{ github.run_number }}
     steps:
-      - name: Sanitize REPORT_DATE
-        shell: bash
-        run: echo "REPORT_DATE=$(echo '${{ github.run_started_at }}' | cut -d'T' -f1)" >> $GITHUB_ENV
-
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - run: npm i
+      - run: npm ci
 
       # ───────── Lighthouse CI (exec-summary for execs) ─────────
 #      - name: Lighthouse CI
+#        env:
+#          REPORT_DATE: ${{ env.REPORT_DATE }}
 #        run: |
 #          npx lhci autorun \
 #            --max-wait-for-load=60000 \
@@ -39,20 +37,17 @@ jobs:
 
       # ───────── Pa11y-CI (full WCAG backlog) ─────────
       - name: Pa11y CI
+        env:
+          REPORT_DATE: ${{ env.REPORT_DATE }}
         run: |
           mkdir -p ./public/pa11y/$REPORT_DATE
           npx pa11y-ci --config .pa11yci.js
-          ls -al ./public
-          ls -al ./public/pa11y
         continue-on-error: true
 
-      - name: Checkout Repository for Deployment
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-
-      - name: Deploy Reports to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public  # This directory contains all your files
+          publish_dir: ./public
+          keep_files: true      # preserves historical folders
+          commit_message: "chore(reports): deploy ${{ github.run_id }} on ${{ env.REPORT_DATE }}"
