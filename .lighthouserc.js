@@ -18,6 +18,7 @@ module.exports = {
             outputDir: `./public/lhci/${process.env.REPORT_DATE}`, // dated folder
             reportFilenamePattern: 'index.html'
         },
-        assert: { preset: 'lighthouse:no-pwa' } // skip the PWA category
+        assert: { preset: 'lighthouse:no-pwa' }, // skip the PWA category,
+        chromeFlags: "--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --no-zygote --single-process --headless=new --disable-gpu"
     }
 };
