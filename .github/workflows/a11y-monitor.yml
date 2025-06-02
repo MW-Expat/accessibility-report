@@ -52,8 +52,9 @@ jobs:
         env:
           REPORT_DATE: ${{ env.REPORT_DATE }}
           CHROME_PATH: ${{ env.CHROME_PATH }}
+          LHCI_CHROMIUM_FLAGS: "--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --headless=new --disable-gpu"
         run: |
-          npx lhci autorun --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --collect.settings.chromePath="$CHROME_PATH"
+          npx lhci autorun --chrome-flags="$LHCI_CHROMIUM_FLAGS" --collect.settings.chromePath="$CHROME_PATH"
         continue-on-error: true
 
       # ───────── Pa11y-CI (full WCAG backlog) ─────────
