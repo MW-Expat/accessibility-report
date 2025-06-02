@@ -12,6 +12,9 @@ module.exports = {
             chromePath: process.env.CHROME_PATH || (process.env.GITHUB_ACTIONS === 'true'
                 ? '/usr/bin/google-chrome-unstable'
                 : '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'),
+            settings: {
+                chromeFlags: "--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --no-zygote --single-process --headless=new --disable-gpu"
+            }
         },
         upload: {
             target: 'filesystem', // write HTML locally
@@ -19,6 +22,5 @@ module.exports = {
             reportFilenamePattern: 'index.html'
         },
         assert: { preset: 'lighthouse:no-pwa' }, // skip the PWA category,
-        chromeFlags: "--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --no-zygote --single-process --headless=new --disable-gpu"
     }
 };
