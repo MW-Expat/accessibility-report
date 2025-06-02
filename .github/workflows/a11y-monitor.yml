@@ -114,7 +114,7 @@ jobs:
           HTML
           
           # Populate the dropdown with every report file in the run
-          for report in *.html; do
+          for report in *.json; do
           [[ "$report" == "index.html" ]] && continue
           label=$(echo "$report" | sed 's/^report-//;s/\.json//')
           echo "    <option value=\"$report\">$label</option>" >> index.html
