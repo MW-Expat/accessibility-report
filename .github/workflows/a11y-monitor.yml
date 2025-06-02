@@ -29,7 +29,19 @@ jobs:
         run: |
           npm install --no-save @puppeteer/browsers@latest
           npx -y @puppeteer/browsers@latest install chrome@canary
-          CHROME_PATH=$(npx -y @puppeteer/browsers@latest path chrome@canary)
+
+          # Attempt 1: use CLI helper to get path
+          CHROME_PATH=$(npx -y @puppeteer/browsers@latest path chrome@canary || true)
+
+          # Fallback: find the binary manually if CLI didn't return
+          if [ -z "$CHROME_PATH" ]; then
+            CHROME_PATH=$(find "$HOME/.cache/puppeteer" -type f -path "*chrome-linux64/chrome" | head -n1 || true)
+          fi
+
+          if [ ! -x "$CHROME_PATH" ]; then
+            echo "Chrome Canary binary not found!" >&2; exit 1;
+          fi
+
           echo "CHROME_PATH=$CHROME_PATH" >> $GITHUB_ENV
           echo "Resolved Chrome Canary path: $CHROME_PATH"
 
