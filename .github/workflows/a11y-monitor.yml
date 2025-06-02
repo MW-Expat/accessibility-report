@@ -51,6 +51,7 @@ jobs:
       - name: Lighthouse CI
         env:
           REPORT_DATE: ${{ env.REPORT_DATE }}
+          CHROME_PATH: ${{ env.CHROME_PATH }}
         run: |
           npx lhci autorun --chrome-flags="--headless --disable-dev-shm-usage" --collect.settings.chromePath="$CHROME_PATH"
         continue-on-error: true
