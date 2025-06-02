@@ -11,9 +11,7 @@ const urls = fs.readFileSync(urlsFilePath, 'utf8')
 const REPORT_DATE = process.env.REPORT_DATE;
 
 module.exports = {
-    urls: [
-        'https://mw-expat.com'
-    ],
+    urls,
     defaults: {
         reporters: [
             "cli",

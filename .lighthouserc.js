@@ -7,7 +7,7 @@ const urls = fs.readFileSync('urls.txt', 'utf-8')
 module.exports = {
     ci: {
         collect: {
-            url: urls[0],
+            url: urls,
             numberOfRuns: 1,
             chromePath: process.env.CHROME_PATH || (process.env.GITHUB_ACTIONS === 'true'
                 ? '/usr/bin/google-chrome-unstable'
