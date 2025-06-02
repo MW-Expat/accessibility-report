@@ -1,25 +1,39 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"/>
-<title>Lighthouse Run</title>
+<title>Lighthouse run</title>
 <style>
 body{margin:0;font-family:system-ui}
-header{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;background:#f6f8fa;border-bottom:1px solid #d0d7de}
+header{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;
+background:#f6f8fa;border-bottom:1px solid #d0d7de}
 select{font-size:1rem;padding:.25rem}
 iframe{width:100%;height:90vh;border:0}
 </style>
 <script>
-function loadReport(sel){document.getElementById('viewer').src = sel.value;}
+// ––––– helpers –––––
+const runBase = location.href.replace(/\/index\.html?$/, '/');           // folder URL
+const viewer   = 'https://googlechrome.github.io/lighthouse/viewer/?jsonurl=';
+
+function loadReport(sel){
+const abs = encodeURIComponent(runBase + sel.value);                   // absolute JSON URL
+document.getElementById('viewer').src = viewer + abs;                  // → Viewer
+}
 </script>
 </head><body>
 <header>
 <label for="reportSel">Page:</label>
 <select id="reportSel" onchange="loadReport(this)">
-    <option value="manifest.json">manifest</option>
     <option value="report-_.json">_</option>
     <option value="report-_health_calculator_test_.json">_health_calculator_test_</option>
 </select>
-<span style="margin-left:auto;font-size:.9rem;opacity:.7;">(Use dropdown to switch pages)</span>
+<span style="margin-left:auto;font-size:.9rem;opacity:.7;">
+(Viewer opens automatically)
+</span>
 </header>
+
 <iframe id="viewer" src="" title="Lighthouse report"></iframe>
-<script>document.getElementById('reportSel').dispatchEvent(new Event('change'));</script>
+
+<script>
+// load first report right away
+document.getElementById('reportSel').dispatchEvent(new Event('change'));
+</script>
 </body></html>
