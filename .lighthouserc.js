@@ -7,7 +7,7 @@ const urls = fs.readFileSync('urls.txt', 'utf-8')
 module.exports = {
     ci: {
         collect: {
-            url: urls,
+            url: [urls[0], urls[1]],
             numberOfRuns: 1,
             chromePath: process.env.CHROME_PATH || (process.env.GITHUB_ACTIONS === 'true'
                 ? '/usr/bin/google-chrome-unstable'
@@ -19,7 +19,7 @@ module.exports = {
         upload: {
             target: 'filesystem', // write HTML locally
             outputDir: `./public/lhci/${process.env.REPORT_DATE}`, // dated folder
-            reportFilenamePattern: 'index.json'
+            reportFilenamePattern: 'report-{{url.pathname}}.json'
         },
         assert: { preset: 'lighthouse:no-pwa' }, // skip the PWA category,
     }
