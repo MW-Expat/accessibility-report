@@ -5,7 +5,7 @@
     "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_.json",
     "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_.json",
     "summary": {
-      "performance": null,
+      "performance": 0.71,
       "accessibility": 0.88,
       "best-practices": 0.75,
       "seo": 0.85
@@ -19,6 +19,702 @@
     "summary": {
       "performance": null,
       "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/socialbee-german-health-insurance-guide/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_socialbee_german_health_insurance_guide_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_socialbee_german_health_insurance_guide_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.88,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/healthcare/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_healthcare_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_healthcare_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.88,
+      "best-practices": 0.75,
+      "seo": 0.85
+    }
+  },
+  {
+    "url": "https://mw-expat.com/pensions/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pensions_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pensions_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.85,
+      "best-practices": 0.75,
+      "seo": 0.85
+    }
+  },
+  {
+    "url": "https://mw-expat.com/private-health-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_private_health_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_private_health_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/betriebliche-altersvorsorge-bav-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_betriebliche_altersvorsorge_bav_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_betriebliche_altersvorsorge_bav_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.87,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/basis-rente-rurup-rente-pension-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_basis_rente_rurup_rente_pension_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_basis_rente_rurup_rente_pension_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.85,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/about-us/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_about_us_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_about_us_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.88,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/personal-liability-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_personal_liability_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_personal_liability_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/vehicle-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_vehicle_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_vehicle_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.85,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/pension-planning-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pension_planning_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pension_planning_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.84,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/fondfinanz-x-mwexpat/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_fondfinanz_x_mwexpat_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_fondfinanz_x_mwexpat_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.84,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/riester-rente-pension-plan-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_riester_rente_pension_plan_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_riester_rente_pension_plan_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/calculate-your-health-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_calculate_your_health_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_calculate_your_health_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.9,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/term-life-insurance-in-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_term_life_insurance_in_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_term_life_insurance_in_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.87,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/occupational-disability-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_occupational_disability_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_occupational_disability_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.85
+    }
+  },
+  {
+    "url": "https://mw-expat.com/legal-aid-and-court-costs-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_legal_aid_and_court_costs_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_legal_aid_and_court_costs_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/personal-accident-insurance-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_personal_accident_insurance_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_personal_accident_insurance_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.87,
+      "best-practices": 0.75,
+      "seo": 0.85
+    }
+  },
+  {
+    "url": "https://mw-expat.com/household-contents-insurance-for-expats/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_household_contents_insurance_for_expats_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_household_contents_insurance_for_expats_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.87,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/private-pension-solutions-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_private_pension_solutions_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_private_pension_solutions_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.84,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/private-health-insurance-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_private_health_insurance_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_private_health_insurance_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/pension-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pension_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pension_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/compare-german-health-insurances/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_german_health_insurances_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_german_health_insurances_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.87,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/contact-us/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_contact_us_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_contact_us_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.84,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/imprint-impressum/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_imprint_impressum_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_imprint_impressum_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.89,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/relocation-german-expat-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_relocation_german_expat_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_relocation_german_expat_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.84,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/compare-german-vehicle-insurances/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_german_vehicle_insurances_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_german_vehicle_insurances_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.85,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/general-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_general_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_general_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.85
+    }
+  },
+  {
+    "url": "https://mw-expat.com/projectexpat/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_projectexpat_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_projectexpat_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.84,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/compare-insurances/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_insurances_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_insurances_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/legal-insurance-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_legal_insurance_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_legal_insurance_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/liability-insurance-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_liability_insurance_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_liability_insurance_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/pension-calculator/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pension_calculator_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pension_calculator_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/home-insurance-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_home_insurance_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_home_insurance_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/pet-insurance-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pet_insurance_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pet_insurance_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/company-pension-scheme-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_company_pension_scheme_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_company_pension_scheme_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.85,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/calculate-german-health-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_calculate_german_health_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_calculate_german_health_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.92,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/compare-german-health-insurances-new/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_german_health_insurances_new_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_german_health_insurances_new_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.9,
+      "best-practices": 0.71,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/state-health-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_state_health_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_state_health_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/relocation/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_relocation_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_relocation_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.9,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/free-german-health-insurance-consultation/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_free_german_health_insurance_consultation_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_free_german_health_insurance_consultation_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.93,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/health-insurance-event/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_health_insurance_event_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_health_insurance_event_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.9,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/wealth-management-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_wealth_management_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_wealth_management_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.85,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/supplementary-health-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_supplementary_health_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_supplementary_health_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/pension-calculator-2/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pension_calculator_2_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pension_calculator_2_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.89,
+      "best-practices": 0.57,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/german-health-insurance-guide-embassy/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_german_health_insurance_guide_embassy_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_german_health_insurance_guide_embassy_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.88,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/expat-health-insurance-guide/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_expat_health_insurance_guide_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_expat_health_insurance_guide_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.9,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/supplementary-form/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_supplementary_form_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_supplementary_form_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.88,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/v-google-review-compare-health-insurances-in-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_v_google_review_compare_health_insurances_in_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_v_google_review_compare_health_insurances_in_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.9,
+      "best-practices": 0.71,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/compare-insurances-pl/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_insurances_pl_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_insurances_pl_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.9,
+      "best-practices": 0.57,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/incoming-and-international-healthcare-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_incoming_and_international_healthcare_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_incoming_and_international_healthcare_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.86,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/retirement-planning-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_retirement_planning_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_retirement_planning_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.9,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/pension-planning-in-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pension_planning_in_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_pension_planning_in_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.9,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/privacy-policy-dsgvo/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_privacy_policy_dsgvo_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_privacy_policy_dsgvo_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.88,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/compare-health-insurances-in-germany/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_health_insurances_in_germany_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_health_insurances_in_germany_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.93,
+      "best-practices": 0.71,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/compare-german-health-insurance/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_german_health_insurance_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_compare_german_health_insurance_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.89,
+      "best-practices": 0.57,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/status-related-initial-information/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_status_related_initial_information_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_status_related_initial_information_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.88,
+      "best-practices": 0.75,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "https://mw-expat.com/blog/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_blog_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_blog_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.89,
+      "best-practices": 0.75,
+      "seo": 0.85
+    }
+  },
+  {
+    "url": "https://mw-expat.com/our-way-of-saying-thank-you-for-your-support/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_our_way_of_saying_thank_you_for_your_support_.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/report-_our_way_of_saying_thank_you_for_your_support_.json",
+    "summary": {
+      "performance": null,
+      "accessibility": 0.89,
       "best-practices": 0.75,
       "seo": 0.92
     }
