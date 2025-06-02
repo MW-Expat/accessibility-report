@@ -2,8 +2,8 @@
   {
     "url": "https://mw-expat.com/",
     "isRepresentativeRun": true,
-    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/index.html",
-    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/index.html",
+    "htmlPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/index.json",
+    "jsonPath": "/home/runner/work/accessibility-report/accessibility-report/public/lhci/2025-06-02/index.json",
     "summary": {
       "performance": null,
       "accessibility": 0.88,
