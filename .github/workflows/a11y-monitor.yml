@@ -56,18 +56,46 @@ jobs:
           npx lhci autorun
         continue-on-error: true
 
-
-
-        # ───────── Build umbrella index.html (latest only) ─────────
+      # ───────── Build umbrella index.html (latest only) ─────────
       - name: ▸ Build umbrella index
         shell: bash
         run: |
           parent="public/lhci"
           mkdir -p "$parent"
           latest=$(ls -1d "$parent"/*/ | sort -r | head -n1 | xargs -n1 basename)
-          
+
+          json_url="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/lhci/$latest/index.json"
+          viewer_url="https://googlechrome.github.io/lighthouse/viewer/?jsonReportUrl=$json_url"
+
           cat > "$parent/index.html" <<HTML
-           <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Latest Accessibility Report</title><style>body{font-family:system-ui;margin:0}header{padding:1rem 2rem;background:#f6f8fa;border-bottom:1px solid #d0d7de}h1{font-size:1.4rem;margin:0}iframe{width:100%;height:90vh;border:0}</style></head><body><header><h1>Latest Accessibility Report – $latest</h1></header><iframe src="$latest/index.html" title="Accessibility report"></iframe></body></html>
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8">
+              <title>Latest Accessibility Report</title>
+              <style>
+                body { font-family: system-ui; margin: 0; padding: 2rem; }
+                a.button {
+                  display: inline-block;
+                  padding: 0.75rem 1.5rem;
+                  background-color: #2ea44f;
+                  color: white;
+                  text-decoration: none;
+                  border-radius: 6px;
+                  font-weight: 600;
+                }
+              </style>
+            </head>
+            <body>
+              <h1>Latest Accessibility Report – $latest</h1>
+              <p>
+                <a class="button" href="$viewer_url" target="_blank">
+                  View in Lighthouse Viewer →
+                </a>
+              </p>
+            </body>
+          </html>
+          HTML
 
       # ───────── Pa11y-CI (full WCAG backlog) ─────────
       - name: Pa11y CI
