@@ -65,7 +65,7 @@ jobs:
           latest=$(ls -1d "$parent"/*/ | sort -r | head -n1 | xargs -n1 basename)
 
           json_url="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/lhci/$latest/index.json"
-          viewer_url="https://googlechrome.github.io/lighthouse/viewer/?jsonReportUrl=$json_url"
+          viewer_url="https://googlechrome.github.io/lighthouse/viewer/?jsonurl=$json_url"
 
           cat > "$parent/index.html" <<HTML
           <!doctype html>
@@ -88,11 +88,7 @@ jobs:
             </head>
             <body>
               <h1>Latest Accessibility Report – $latest</h1>
-              <p>
-                <a class="button" href="$viewer_url" target="_blank">
-                  View in Lighthouse Viewer →
-                </a>
-              </p>
+              <iframe src="$viewer_url" title="Accessibility report"></iframe>
             </body>
           </html>
           HTML
