@@ -19,7 +19,7 @@ module.exports = {
         upload: {
             target: 'filesystem', // write HTML locally
             outputDir: `./public/lhci/${process.env.REPORT_DATE}`, // dated folder
-            reportFilenamePattern: 'report-{{url.pathname}}.json'
+            reportFilenamePattern: 'report-%%PATHNAME%%.json'
         },
         assert: { preset: 'lighthouse:no-pwa' }, // skip the PWA category,
     }
