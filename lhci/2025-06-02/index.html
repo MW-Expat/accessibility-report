@@ -14,6 +14,9 @@ function loadReport(sel){document.getElementById('viewer').src = sel.value;}
 <header>
 <label for="reportSel">Page:</label>
 <select id="reportSel" onchange="loadReport(this)">
+    <option value="manifest.json">manifest</option>
+    <option value="report-_.json">_</option>
+    <option value="report-_health_calculator_test_.json">_health_calculator_test_</option>
 </select>
 <span style="margin-left:auto;font-size:.9rem;opacity:.7;">(Use dropdown to switch pages)</span>
 </header>
