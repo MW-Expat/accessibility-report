@@ -52,7 +52,7 @@ jobs:
         env:
           REPORT_DATE: ${{ env.REPORT_DATE }}
           CHROME_PATH: ${{ env.CHROME_PATH }}
-          LHCI_CHROMIUM_FLAGS: "--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --headless=new --disable-gpu"
+          LHCI_CHROMIUM_FLAGS: "--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --no-zygote --single-process --headless=new --disable-gpu"
         run: |
           npx lhci autorun --chrome-flags="$LHCI_CHROMIUM_FLAGS" --collect.settings.chromePath="$CHROME_PATH"
         continue-on-error: true
