@@ -28,13 +28,10 @@ jobs:
       - name: ▸ Install Chrome Canary (puppeteer/browsers)
         run: |
           npm install --no-save @puppeteer/browsers@latest
-          npx --yes @puppeteer/browsers@latest install chrome@canary
-          echo "CHROME_PATH=$(node - <<'NODE'
-          const { computeExecutablePath } = require('@puppeteer/browsers');
-          console.log(computeExecutablePath({browser: 'chrome', channel: 'canary' }));
-          NODE
-          )" >> "$GITHUB_ENV"
-          echo "Chrome Canary path set to $CHROME_PATH"
+          npx -y @puppeteer/browsers@latest install chrome@canary
+          CHROME_PATH=$(npx -y @puppeteer/browsers@latest path chrome@canary)
+          echo "CHROME_PATH=$CHROME_PATH" >> $GITHUB_ENV
+          echo "Resolved Chrome Canary path: $CHROME_PATH"
 
       - run: npm ci
 
