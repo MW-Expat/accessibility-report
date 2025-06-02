@@ -35,7 +35,7 @@ jobs:
 
           # Fallback: find the binary manually if CLI didn't return
           if [ -z "$CHROME_PATH" ]; then
-            CHROME_PATH=$(find "$HOME/.cache/puppeteer" -type f -path "*chrome-linux64/chrome" | head -n1 || true)
+            CHROME_PATH=$(find "$HOME/work" -type f -path "*chrome-linux64/chrome" | head -n1 || true)
           fi
 
           if [ ! -x "$CHROME_PATH" ]; then
