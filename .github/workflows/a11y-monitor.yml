@@ -58,6 +58,8 @@ jobs:
 
       # ▸ Build umbrella index (root + per-run)
       - name: ▸ Build umbrella index
+        env:
+          REPORT_DATE: ${{ env.REPORT_DATE }}
         shell: bash
         run: |
           # ── config ────────────────────────────────────────────────────────────────
@@ -114,7 +116,7 @@ jobs:
           # Populate the dropdown with every report file in the run
           for report in *.html; do
           [[ "$report" == "index.html" ]] && continue
-          label=$(echo "$report" | sed 's/^report-//;s/\.html$//')
+          label=$(echo "$report" | sed 's/^report-//;s/\.json//')
           echo "    <option value=\"$report\">$label</option>" >> index.html
           done
           
