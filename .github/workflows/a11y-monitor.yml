@@ -77,10 +77,10 @@ jobs:
         shell: bash
         run: |
           mkdir -p             site/public/pa11y
-          rsync -a --delete    public/pa11y/          site/public/pa11y/
+          rsync -a             public/pa11y/          site/public/pa11y/
 
           mkdir -p             site/public/lhci
-          rsync -a --delete    public/lhci/           site/public/lhci/
+          rsync -a             public/lhci/           site/public/lhci/
 
       # ▸ Build umbrella index (root + per-run)
       - name: ▸ Build Lighthouse umbrella index
