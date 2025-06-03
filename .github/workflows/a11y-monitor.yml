@@ -47,6 +47,13 @@ jobs:
 
       - run: npm ci
 
+      - name: Fetch published site
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages          # ← your published branch
+          path: site             # keep it separate from the source checkout
+          fetch-depth: 0
+
       # ───────── Lighthouse CI (exec-summary for execs) ─────────
       - name: Lighthouse CI
         env:
@@ -56,8 +63,27 @@ jobs:
           npx lhci autorun
         continue-on-error: true
 
+      # ───────── Pa11y-CI (full WCAG backlog) ─────────
+      - name: Pa11y CI
+        env:
+          REPORT_DATE: ${{ env.REPORT_DATE }}
+        run: |
+          mkdir -p ./public/pa11y/$REPORT_DATE
+          npx pa11y-ci --config .pa11yci.js
+        continue-on-error: true
+
+      # after your Pa11y/LHCI steps
+      - name: Merge latest reports into published site
+        shell: bash
+        run: |
+          mkdir -p             site/public/pa11y
+          rsync -a --delete    public/pa11y/          site/public/pa11y/
+
+          mkdir -p             site/public/lhci
+          rsync -a --delete    public/lhci/           site/public/lhci/
+
       # ▸ Build umbrella index (root + per-run)
-      - name: ▸ Build umbrella index
+      - name: ▸ Build Lighthouse umbrella index
         env:
           REPORT_DATE: ${{ env.REPORT_DATE }}
         shell: bash
@@ -65,7 +91,7 @@ jobs:
           ############################################################################
           # 0. Basic paths
           ############################################################################
-          parent="public/lhci"        # where LHCI artifacts live
+          parent="site/public/lhci"        # where LHCI artifacts live
           mkdir -p "$parent"
 
           ############################################################################
@@ -150,35 +176,21 @@ jobs:
           </body></html>
           HTML
 
-      # ───────── Pa11y-CI (full WCAG backlog) ─────────
-      - name: Pa11y CI
-        env:
-          REPORT_DATE: ${{ env.REPORT_DATE }}
-        run: |
-          mkdir -p ./public/pa11y/$REPORT_DATE
-          npx pa11y-ci --config .pa11yci.js
-        continue-on-error: true
-
       # ───────── Build umbrella index for Pa11y reports ─────────
       - name: ▸ Build umbrella index (Pa11y)
         shell: bash
+        working-directory: site/public/pa11y
         run: |
           ###########################################################################
-          # 0. Where Pa11y puts its HTML reports
+          # 0. Root listing of all historic runs
           ###########################################################################
-          parent="public/pa11y"          # <─ matches pa11y-ci reporter destination
-          mkdir -p "$parent"
-
-          ###########################################################################
-          # 1. Root index — lists every historical run (newest first)
-          ###########################################################################
-          cat > "$parent/index.html" <<'HTML'
+          cat > index.html <<'HTML'
           <!doctype html><html lang="en"><head>
           <meta charset="utf-8"/>
           <title>All Pa11y runs</title>
           <style>
           body{font-family:system-ui;margin:0;padding:2rem}
-          h1{margin-top:0}
+          h1{margin:0 0 1rem}
           .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
           a{display:block;padding:1rem;border:1px solid #d0d7de;border-radius:6px;
           text-decoration:none;color:#1f2328;background:#f6f8fa}
@@ -188,66 +200,18 @@ jobs:
           <div class="grid">
           HTML
           
-          for run in $(ls -1dt "$parent"/*/); do
-          run_dir=$(basename "$run")
-          echo "<a href=\"${run_dir}/index.html\">${run_dir}</a>" >> "$parent/index.html"
+          # newest-first links to every dated folder
+          for run in $(ls -1dt */); do
+          run_dir=${run%/}                       # strip trailing “/”
+          echo "<a href=\"${run_dir}/index.html\">${run_dir}</a>" >> index.html
           done
           
-          echo "</div></body></html>" >> "$parent/index.html"
-          
-          ###########################################################################
-          # 2. Per-run index — pick a page, show its report
-          ###########################################################################
-          latest=$(ls -1dt "$parent"/*/ | head -n1)   # newest run folder
-          cd "$latest"
-          
-          cat > index.html <<'HTML'
-          <!doctype html><html lang="en"><head>
-          <meta charset="utf-8"/>
-          <title>Pa11y run</title>
-          <style>
-          body{margin:0;font-family:system-ui}
-          header{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;
-          background:#f6f8fa;border-bottom:1px solid #d0d7de}
-          select{font-size:1rem;padding:.25rem}
-          iframe{width:100%;height:90vh;border:0}
-          </style>
-          <script>
-          function loadReport(sel){
-          document.getElementById('viewer').src = sel.value;
-          }
-          </script>
-          </head><body>
-          <header>
-          <label for="reportSel">Page:</label>
-          <select id="reportSel" onchange="loadReport(this)">
-          HTML
-          
-          # every HTML file *except* index.html becomes a dropdown option
-          for report in *.html; do
-          [ [ "$report" == "index.html" ] ] && continue
-          label=$(echo "$report" | sed 's/\.html$//')
-          echo "    <option value=\"$report\">$label</option>" >> index.html
-          done
-          
-          cat >> index.html <<'HTML'
-          </select>
-          <span style="margin-left:auto;font-size:.9rem;opacity:.7;">(Viewer opens automatically)</span>
-          </header>
-          
-          <iframe id="viewer" src="" title="Pa11y report"></iframe>
-          
-          <script>
-          // load the first report right away
-          document.getElementById('reportSel').dispatchEvent(new Event('change'));
-          </script>
-          </body></html>
-          HTML
+          echo "</div></body></html>" >> index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./site
           keep_files: true      # preserves historical folders
           commit_message: "chore(reports): deploy ${{ github.run_id }} on ${{ env.REPORT_DATE }}"
