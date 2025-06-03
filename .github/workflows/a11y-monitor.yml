@@ -159,16 +159,90 @@ jobs:
           npx pa11y-ci --config .pa11yci.js
         continue-on-error: true
 
-          # ───────── Build umbrella index.html (latest only) ─────────
-      - name: ▸ Build umbrella index
+      # ───────── Build umbrella index for Pa11y reports ─────────
+      - name: ▸ Build umbrella index (Pa11y)
         shell: bash
         run: |
-         parent="public/pa11y"
-         mkdir -p "$parent"
-         latest=$(ls -1d "$parent"/*/ | sort -r | head -n1 | xargs -n1 basename)
-         
-         cat > "$parent/index.html" <<HTML
-          <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Latest Accessibility Report</title><style>body{font-family:system-ui;margin:0}header{padding:1rem 2rem;background:#f6f8fa;border-bottom:1px solid #d0d7de}h1{font-size:1.4rem;margin:0}iframe{width:100%;height:90vh;border:0}</style></head><body><header><h1>Latest Accessibility Report – $latest</h1></header><iframe src="$latest/index.html" title="Accessibility report"></iframe></body></html>
+          ###########################################################################
+          # 0. Where Pa11y puts its HTML reports
+          ###########################################################################
+          parent="public/pa11y"          # <─ matches pa11y-ci reporter destination
+          mkdir -p "$parent"
+
+          ###########################################################################
+          # 1. Root index — lists every historical run (newest first)
+          ###########################################################################
+          cat > "$parent/index.html" <<'HTML'
+          <!doctype html><html lang="en"><head>
+          <meta charset="utf-8"/>
+          <title>All Pa11y runs</title>
+          <style>
+          body{font-family:system-ui;margin:0;padding:2rem}
+          h1{margin-top:0}
+          .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+          a{display:block;padding:1rem;border:1px solid #d0d7de;border-radius:6px;
+          text-decoration:none;color:#1f2328;background:#f6f8fa}
+          </style>
+          </head><body>
+          <h1>All Pa11y runs</h1>
+          <div class="grid">
+          HTML
+          
+          for run in $(ls -1dt "$parent"/*/); do
+          run_dir=$(basename "$run")
+          echo "<a href=\"${run_dir}/index.html\">${run_dir}</a>" >> "$parent/index.html"
+          done
+          
+          echo "</div></body></html>" >> "$parent/index.html"
+          
+          ###########################################################################
+          # 2. Per-run index — pick a page, show its report
+          ###########################################################################
+          latest=$(ls -1dt "$parent"/*/ | head -n1)   # newest run folder
+          cd "$latest"
+          
+          cat > index.html <<'HTML'
+          <!doctype html><html lang="en"><head>
+          <meta charset="utf-8"/>
+          <title>Pa11y run</title>
+          <style>
+          body{margin:0;font-family:system-ui}
+          header{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;
+          background:#f6f8fa;border-bottom:1px solid #d0d7de}
+          select{font-size:1rem;padding:.25rem}
+          iframe{width:100%;height:90vh;border:0}
+          </style>
+          <script>
+          function loadReport(sel){
+          document.getElementById('viewer').src = sel.value;
+          }
+          </script>
+          </head><body>
+          <header>
+          <label for="reportSel">Page:</label>
+          <select id="reportSel" onchange="loadReport(this)">
+          HTML
+          
+          # every HTML file *except* index.html becomes a dropdown option
+          for report in *.html; do
+          [ [ "$report" == "index.html" ] ] && continue
+          label=$(echo "$report" | sed 's/\.html$//')
+          echo "    <option value=\"$report\">$label</option>" >> index.html
+          done
+          
+          cat >> index.html <<'HTML'
+          </select>
+          <span style="margin-left:auto;font-size:.9rem;opacity:.7;">(Viewer opens automatically)</span>
+          </header>
+          
+          <iframe id="viewer" src="" title="Pa11y report"></iframe>
+          
+          <script>
+          // load the first report right away
+          document.getElementById('reportSel').dispatchEvent(new Event('change'));
+          </script>
+          </body></html>
+          HTML
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
