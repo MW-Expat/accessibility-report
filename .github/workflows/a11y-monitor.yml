@@ -76,11 +76,11 @@ jobs:
       - name: Merge latest reports into published site
         shell: bash
         run: |
-          mkdir -p             site/public/pa11y
-          rsync -a             public/pa11y/          site/public/pa11y/
+          mkdir -p             site/pa11y
+          rsync -a             public/pa11y/          site/pa11y/
 
-          mkdir -p             site/public/lhci
-          rsync -a             public/lhci/           site/public/lhci/
+          mkdir -p             site/lhci
+          rsync -a             public/lhci/           site/lhci/
 
       # ▸ Build umbrella index (root + per-run)
       - name: ▸ Build Lighthouse umbrella index
@@ -91,7 +91,7 @@ jobs:
           ############################################################################
           # 0. Basic paths
           ############################################################################
-          parent="site/public/lhci"        # where LHCI artifacts live
+          parent="site/lhci"        # where LHCI artifacts live
           mkdir -p "$parent"
 
           ############################################################################
@@ -179,7 +179,7 @@ jobs:
       # ───────── Build umbrella index for Pa11y reports ─────────
       - name: ▸ Build umbrella index (Pa11y)
         shell: bash
-        working-directory: site/public/pa11y
+        working-directory: site/pa11y
         run: |
           ###########################################################################
           # 0. Root listing of all historic runs
@@ -212,6 +212,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site/public
+          publish_dir: site
           keep_files: true      # preserves historical folders
           commit_message: "chore(reports): deploy ${{ github.run_id }} on ${{ env.REPORT_DATE }}"
