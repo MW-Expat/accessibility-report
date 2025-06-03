@@ -212,6 +212,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          publish_dir: ./site/public
           keep_files: true      # preserves historical folders
           commit_message: "chore(reports): deploy ${{ github.run_id }} on ${{ env.REPORT_DATE }}"
