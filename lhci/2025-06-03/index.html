@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/>
+<title>Lighthouse run</title>
+<style>
+body{margin:0;font-family:system-ui}
+header{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;
+background:#f6f8fa;border-bottom:1px solid #d0d7de}
+select{font-size:1rem;padding:.25rem}
+iframe{width:100%;height:90vh;border:0}
+</style>
+<script>
+// ––––– helpers –––––
+const runBase = location.href.replace(/\/index\.html?$/, '/');           // folder URL
+const viewer   = 'https://googlechrome.github.io/lighthouse/viewer/?jsonurl=';
+
+function loadReport(sel){
+const abs = encodeURIComponent(runBase + sel.value);                   // absolute JSON URL
+document.getElementById('viewer').src = viewer + abs;                  // → Viewer
+}
+</script>
+</head><body>
+<header>
+<label for="reportSel">Page:</label>
+<select id="reportSel" onchange="loadReport(this)">
+    <option value="report-_.json">_</option>
+</select>
+<span style="margin-left:auto;font-size:.9rem;opacity:.7;">
+(Viewer opens automatically)
+</span>
+</header>
+
+<iframe id="viewer" src="" title="Lighthouse report"></iframe>
+
+<script>
+// load first report right away
+document.getElementById('reportSel').dispatchEvent(new Event('change'));
+</script>
+</body></html>
