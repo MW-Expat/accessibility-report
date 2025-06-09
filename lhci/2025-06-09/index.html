@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/>
+<title>Lighthouse run</title>
+<style>
+body{margin:0;font-family:system-ui}
+header{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;
+background:#f6f8fa;border-bottom:1px solid #d0d7de}
+select{font-size:1rem;padding:.25rem}
+iframe{width:100%;height:90vh;border:0}
+</style>
+<script>
+// ––––– helpers –––––
+const runBase = location.href.replace(/\/index\.html?$/, '/');           // folder URL
+const viewer   = 'https://googlechrome.github.io/lighthouse/viewer/?jsonurl=';
+
+function loadReport(sel){
+const abs = encodeURIComponent(runBase + sel.value);                   // absolute JSON URL
+document.getElementById('viewer').src = viewer + abs;                  // → Viewer
+}
+</script>
+</head><body>
+<header>
+<label for="reportSel">Page:</label>
+<select id="reportSel" onchange="loadReport(this)">
+    <option value="report-_.json">_</option>
+    <option value="report-_about_us_.json">_about_us_</option>
+    <option value="report-_basis_rente_rurup_rente_pension_germany_.json">_basis_rente_rurup_rente_pension_germany_</option>
+    <option value="report-_betriebliche_altersvorsorge_bav_germany_.json">_betriebliche_altersvorsorge_bav_germany_</option>
+    <option value="report-_blog_.json">_blog_</option>
+    <option value="report-_calculate_german_health_insurance_.json">_calculate_german_health_insurance_</option>
+    <option value="report-_calculate_your_health_insurance_.json">_calculate_your_health_insurance_</option>
+    <option value="report-_company_pension_scheme_germany_.json">_company_pension_scheme_germany_</option>
+    <option value="report-_compare_german_health_insurance_.json">_compare_german_health_insurance_</option>
+    <option value="report-_compare_german_health_insurances_.json">_compare_german_health_insurances_</option>
+    <option value="report-_compare_german_health_insurances_new_.json">_compare_german_health_insurances_new_</option>
+    <option value="report-_compare_german_vehicle_insurances_.json">_compare_german_vehicle_insurances_</option>
+    <option value="report-_compare_health_insurances_in_germany_.json">_compare_health_insurances_in_germany_</option>
+    <option value="report-_compare_insurances_.json">_compare_insurances_</option>
+    <option value="report-_compare_insurances_pl_.json">_compare_insurances_pl_</option>
+    <option value="report-_contact_us_.json">_contact_us_</option>
+    <option value="report-_expat_health_insurance_guide_.json">_expat_health_insurance_guide_</option>
+    <option value="report-_fondfinanz_x_mwexpat_.json">_fondfinanz_x_mwexpat_</option>
+    <option value="report-_free_german_health_insurance_consultation_.json">_free_german_health_insurance_consultation_</option>
+    <option value="report-_general_insurance_.json">_general_insurance_</option>
+    <option value="report-_german_health_insurance_guide_embassy_.json">_german_health_insurance_guide_embassy_</option>
+    <option value="report-_health_calculator_test_.json">_health_calculator_test_</option>
+    <option value="report-_health_insurance_event_.json">_health_insurance_event_</option>
+    <option value="report-_healthcare_.json">_healthcare_</option>
+    <option value="report-_home_insurance_germany_.json">_home_insurance_germany_</option>
+    <option value="report-_household_contents_insurance_for_expats_.json">_household_contents_insurance_for_expats_</option>
+    <option value="report-_imprint_impressum_.json">_imprint_impressum_</option>
+    <option value="report-_incoming_and_international_healthcare_insurance_.json">_incoming_and_international_healthcare_insurance_</option>
+    <option value="report-_legal_aid_and_court_costs_insurance_.json">_legal_aid_and_court_costs_insurance_</option>
+    <option value="report-_legal_insurance_germany_.json">_legal_insurance_germany_</option>
+    <option value="report-_liability_insurance_germany_.json">_liability_insurance_germany_</option>
+    <option value="report-_occupational_disability_insurance_.json">_occupational_disability_insurance_</option>
+    <option value="report-_our_way_of_saying_thank_you_for_your_support_.json">_our_way_of_saying_thank_you_for_your_support_</option>
+    <option value="report-_pension_calculator_.json">_pension_calculator_</option>
+    <option value="report-_pension_calculator_2_.json">_pension_calculator_2_</option>
+    <option value="report-_pension_germany_.json">_pension_germany_</option>
+    <option value="report-_pension_planning_germany_.json">_pension_planning_germany_</option>
+    <option value="report-_pension_planning_in_germany_.json">_pension_planning_in_germany_</option>
+    <option value="report-_pensions_.json">_pensions_</option>
+    <option value="report-_personal_accident_insurance_germany_.json">_personal_accident_insurance_germany_</option>
+    <option value="report-_personal_liability_insurance_.json">_personal_liability_insurance_</option>
+    <option value="report-_pet_insurance_germany_.json">_pet_insurance_germany_</option>
+    <option value="report-_privacy_policy_dsgvo_.json">_privacy_policy_dsgvo_</option>
+    <option value="report-_private_health_insurance_.json">_private_health_insurance_</option>
+    <option value="report-_private_health_insurance_germany_.json">_private_health_insurance_germany_</option>
+    <option value="report-_private_pension_solutions_germany_.json">_private_pension_solutions_germany_</option>
+    <option value="report-_projectexpat_.json">_projectexpat_</option>
+    <option value="report-_relocation_.json">_relocation_</option>
+    <option value="report-_relocation_german_expat_insurance_.json">_relocation_german_expat_insurance_</option>
+    <option value="report-_retirement_planning_germany_.json">_retirement_planning_germany_</option>
+    <option value="report-_riester_rente_pension_plan_germany_.json">_riester_rente_pension_plan_germany_</option>
+    <option value="report-_socialbee_german_health_insurance_guide_.json">_socialbee_german_health_insurance_guide_</option>
+    <option value="report-_state_health_insurance_.json">_state_health_insurance_</option>
+    <option value="report-_status_related_initial_information_.json">_status_related_initial_information_</option>
+    <option value="report-_supplementary_form_.json">_supplementary_form_</option>
+    <option value="report-_supplementary_health_insurance_.json">_supplementary_health_insurance_</option>
+    <option value="report-_term_life_insurance_in_germany_.json">_term_life_insurance_in_germany_</option>
+    <option value="report-_v_google_review_compare_health_insurances_in_germany_.json">_v_google_review_compare_health_insurances_in_germany_</option>
+    <option value="report-_vehicle_insurance_.json">_vehicle_insurance_</option>
+    <option value="report-_wealth_management_germany_.json">_wealth_management_germany_</option>
+</select>
+<span style="margin-left:auto;font-size:.9rem;opacity:.7;">
+(Viewer opens automatically)
+</span>
+</header>
+
+<iframe id="viewer" src="" title="Lighthouse report"></iframe>
+
+<script>
+// load first report right away
+document.getElementById('reportSel').dispatchEvent(new Event('change'));
+</script>
+</body></html>
